@@ -23,8 +23,7 @@ const paths = {
 // }
 // const htmlPlugins = generateHtmlPlugins('./src/pug');
 module.exports = {
-    context: paths.src,
-    entry: '../index.js',
+    entry: './index.js',
     output: {
         path: paths.public,
         filename: "[name].min.js",
@@ -34,10 +33,10 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './pug/index.pug'
+            template: './src/pug/index.pug'
         }),
         new HtmlWebpackPlugin({
-            template: './pug/firstpage.pug'
+            template: './src/pug/firstpage.pug'
         }),
     ],
     module: {
