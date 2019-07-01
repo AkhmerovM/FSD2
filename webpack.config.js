@@ -3,8 +3,8 @@ const fs = require('fs');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = {
-    src: path.resolve(__dirname, '/src'),
-    public: path.resolve(__dirname, '/dist'),
+    src: path.resolve(__dirname, 'src'),
+    public: path.resolve(__dirname, 'dist'),
 };
 
 // console.log(pages);
@@ -23,7 +23,10 @@ const paths = {
 // }
 // const htmlPlugins = generateHtmlPlugins('./src/pug');
 module.exports = {
-    entry: './index.js',
+    entry: {
+        'index': paths.src + '/pages/index.js',
+        'first': paths.src + '/pages/firstpage.js',
+    },
     output: {
         path: paths.public,
         filename: "[name].min.js",
@@ -33,20 +36,39 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/pug/index.pug'
+            template: paths.src + '/pages/index.pug',
+            filename: 'index.html',
+            inject: 'body',
         }),
         new HtmlWebpackPlugin({
-            template: './src/pug/firstpage.pug'
+            template: paths.src + '/pages/firstpage.pug',
+            filename: 'firstpage.html',
+            inject: 'body',
         }),
     ],
+    node: {
+        fs: 'empty'
+    },
     module: {
         rules: [
             {
-                test: /\.pug$/,
-                use: ["pug-loader"]
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: "babel-loader"
             },
             {
-                test: /\.less$/,
+                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+                loader: "url-loader",
+            },
+            {
+                test: /\.pug$/,
+                loader: "pug-loader",
+                options: {
+                    pretty: true,
+                }
+            },
+            {
+                test: /\.(css|less)$/,
                 use: [
                     {
                         loader: 'style-loader', // creates style nodes from JS strings
