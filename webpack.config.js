@@ -36,12 +36,12 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: paths.src + '/pages/index.pug',
+            template: paths.src + '/pages/pug/index.pug',
             filename: 'index.html',
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
-            template: paths.src + '/pages/firstpage.pug',
+            template: paths.src + '/pages/pug/firstpage.pug',
             filename: 'firstpage.html',
             inject: 'body',
         }),
