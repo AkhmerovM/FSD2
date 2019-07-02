@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = {
@@ -24,8 +25,8 @@ const paths = {
 // const htmlPlugins = generateHtmlPlugins('./src/pug');
 module.exports = {
     entry: {
-        'index': paths.src + '/pages/index.js',
-        'first': paths.src + '/pages/firstpage.js',
+        'index': paths.src + '/pages/ui-kit/index.js',
+        'first': paths.src + '/pages/landing/index.js',
     },
     output: {
         path: paths.public,
@@ -36,15 +37,18 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: paths.src + '/pages/pug/index.pug',
+            template: paths.src + '/pages/ui-kit/index.pug',
             filename: 'index.html',
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
-            template: paths.src + '/pages/pug/firstpage.pug',
+            template: paths.src + '/pages/landing/index.pug',
             filename: 'firstpage.html',
             inject: 'body',
         }),
+        new ExtractTextPlugin({
+            filename: '[name].min.css'
+        })
     ],
     node: {
         fs: 'empty'
@@ -69,17 +73,10 @@ module.exports = {
             },
             {
                 test: /\.(css|less)$/,
-                use: [
-                    {
-                        loader: 'style-loader', // creates style nodes from JS strings
-                    },
-                    {
-                        loader: 'css-loader', // translates CSS into CommonJS
-                    },
-                    {
-                        loader: 'less-loader', // compiles Less to CSS
-                    },
-                ],
+                use: ExtractTextPlugin.extract({
+                    use: ['css-loader', 'less-loader'],
+                    fallback: 'style-loader'
+                })
             },
         ]
     }
