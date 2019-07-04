@@ -1,5 +1,41 @@
 extends ../components/layout/layout
 include ../components/logo/index
+include ../components/input/index
+include ../components/checkbox/index
+include ../components/input-date/index
+include ../components/masked-input/index
 
 block content
-        +logo()
+        .ui-kit-block
+                +logo()
+                .ui-kit-block__content
+                        .ui-kit-block__components
+                                +input({
+                                    label: 'Text Field',
+                                    placeholder: 'Email'
+                                })
+                                +input({
+                                    label: 'Text Field',
+                                    placeholder: 'Email'
+                                })
+                                +masked-input({
+                                    label: 'Masked input'
+                                })
+                                +input-date({
+                                    label: 'Text Field',
+                                    range: 'true'
+                                })
+
+                        .ui-kit-block__components
+                                +checkbox({
+                                    label: 'Можно курить'
+                                })
+                                +checkbox({
+                                    label: 'Можно с питомцами',
+                                    checked: true
+                                })
+                                +checkbox({
+                                    label: 'Можно с пригласить гостей(до 10 человек)',
+                                    checked: true
+                                })
+                        .ui-kit-block__components

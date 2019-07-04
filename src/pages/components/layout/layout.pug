@@ -1,7 +1,9 @@
 html
     head
         title My Site - #{title}
+        block links
         block scripts
+            script(src="http://code.jquery.com/jquery-1.9.1.js")
     body
         block content
         block footer

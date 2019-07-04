@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,32 +7,17 @@ const paths = {
     public: path.resolve(__dirname, 'dist'),
 };
 
-// console.log(pages);
-// function generateHtmlPlugins (templateDir) {
-//     const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
-//     return templateFiles.map(item => {
-//         // Split names and extension
-//         const parts = item.split('.')
-//         const name = parts[0]
-//         const extension = parts[1]
-//         return new HtmlWebpackPlugin({
-//             filename: `${name}.html`,
-//             template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
-//         })
-//     })
-// }
-// const htmlPlugins = generateHtmlPlugins('./src/pug');
 module.exports = {
     entry: {
-        'index': paths.src + '/pages/ui-kit/index.js',
-        'first': paths.src + '/pages/landing/index.js',
+        'index': paths.src + '/js/index.js',
     },
+    devtool: "source-map",
     output: {
         path: paths.public,
         filename: "[name].min.js",
     },
     devServer: {
-        port: 4000,
+        port: 4001,
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,0 +1,23 @@
+@import "../../../style/style.less";
+
+.masked-input-block {
+    &__label {
+        font-family: Montserrat-Bold;
+        font-size: @fSmallSize;
+        text-transform: uppercase;
+    }
+    &__input {
+        padding: 12px;
+        font-family: Montserrat-Regular;
+        font-size: @fMiddleSize;
+        border-radius: 4px;
+        color: @cDarkShade75;
+        border: 1px solid @cDarkShade25;
+        outline: none;
+        background-color: transparent;
+        text-transform: uppercase;
+        &:hover, &:focus {
+            border-color: @cDarkShade50;
+        }
+    }
+}

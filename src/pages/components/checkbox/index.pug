@@ -1,5 +1,5 @@
 mixin checkbox(data)
         .checkbox-block
                 label.checkbox-block__label #{data.label}
-                        input(type='checkbox' class='checkbox-block__checkbox')
+                        input(type='checkbox' checked=data.checked || false class='checkbox-block__checkbox')
                         span.checkbox-block__checkmark

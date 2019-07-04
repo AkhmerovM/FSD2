@@ -1,4 +1,6 @@
+include ../../components/arrow/index
 mixin input(data)
         .input-block
-                .input-block__label #{data.label}
-                input(type='text' class='input-block__input' placeholder=data.placeholder)
+                label.input-block__label #{data.label}
+                        input(type='text' class=`input-block__input ${data.icon ? 'input-block__input_icon' : ''}` placeholder=data.placeholder value=data.value || '')
+

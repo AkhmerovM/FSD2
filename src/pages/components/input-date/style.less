@@ -1,0 +1,21 @@
+@import "../../../style/style.less";
+
+.input-date-block {
+    &__label {
+        font-family: Montserrat-Bold;
+        font-size: @fSmallSize;
+        text-transform: uppercase;
+    }
+    &__input {
+        padding: 12px;
+        font-family: Montserrat-Regular;
+        font-size: @fMiddleSize;
+        border-radius: 4px;
+        color: @cDarkShade75;
+        border: 1px solid @cDarkShade25;
+        outline: none;
+        &:hover, &:focus {
+            border-color: @cDarkShade50;
+        }
+    }
+}

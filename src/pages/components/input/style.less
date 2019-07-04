@@ -7,13 +7,18 @@
         text-transform: uppercase;
     }
     &__input {
-        padding: 10px;
+        padding: 12px;
         font-family: Montserrat-Regular;
         font-size: @fMiddleSize;
         border-radius: 4px;
         color: @cDarkShade75;
         border: 1px solid @cDarkShade25;
         outline: none;
+        &_icon {
+            background: url('../../../svg/arrow-right.svg') calc(100% - 12px) no-repeat;
+            padding-right: 32px;
+            fill: @cPurple;
+        }
         &:hover, &:focus {
             border-color: @cDarkShade50;
         }
