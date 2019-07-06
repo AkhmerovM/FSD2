@@ -1,0 +1,52 @@
+@import "../../../style/style.less";
+
+.radio-block {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    &__label {
+        font-family: Montserrat-Regular;
+        font-size: @fMiddleSize;
+        color: @cDarkShade50;
+        line-height: 20px;
+    }
+    &__checkbox {
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        top: 0;
+        height: 0;
+        width: 0;
+        cursor: pointer;
+        &:checked ~ .checkbox-block__checkmark {
+            border: 1px solid @cPurple;
+            color: @cPurple;
+        }
+        &:checked ~ .checkbox-block__checkmark:after {
+            display: block;
+        }
+    }
+    &__checkmark {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border-radius: 4px;
+        top: 0;
+        left: 0;
+        border: 1px solid @cDarkShade25;
+        &:after{
+            content: "";
+            position: absolute;
+            display: none;
+            left: 6px;
+            top: 3px;
+            width: 6px;
+            height: 8px;
+            border: solid @cPurple;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+}

@@ -27,7 +27,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: paths.src + '/pages/landing/index.pug',
-            filename: 'firstpage.html',
+            filename: 'landing.html',
             inject: 'body',
         }),
         new ExtractTextPlugin({

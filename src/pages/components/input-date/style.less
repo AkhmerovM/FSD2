@@ -5,8 +5,10 @@
         font-family: Montserrat-Bold;
         font-size: @fSmallSize;
         text-transform: uppercase;
+        display: block;
     }
     &__input {
+        width: 100%;
         padding: 12px;
         font-family: Montserrat-Regular;
         font-size: @fMiddleSize;
@@ -16,6 +18,138 @@
         outline: none;
         &:hover, &:focus {
             border-color: @cDarkShade50;
+        }
+    }
+    &__date {
+        width: 50%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        z-index: -1;
+    }
+}
+.datepicker {
+    font-size: @fSmallSize;
+    width: 320px;
+    padding: 19px;
+    box-sizing: border-box;
+    &--nav {
+        padding: 0;
+        border: none;
+    }
+    &--nav-title {
+        font-family: Quicksand;
+        color: @cBlack;
+        font-size: 19px;
+        &:hover {
+            background-color: #fff;
+        }
+        & i {
+            color: @cBlack;
+        }
+    }
+    &--content {
+        font-family: Montserrat-Regular;
+        padding: 0;
+        margin-top: 30px;
+    }
+    &--days-names {
+        display: block;
+    }
+    &--day-name {
+        color: @cPurple;
+        font-family: Montserrat-Bold;
+        width: 40px;
+        font-size: 1em;
+        display: inline-block;
+    }
+    &--cell-day {
+        color: @cDarkShade50;
+        height: 40px;
+        width: 40px;
+        position: relative;
+    }
+    &--cell ~ .-current- {
+        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+        border-radius: 50%;
+        font-family: Montserrat-Bold;
+        color: @cWhite;
+    }
+    &--cell ~ .-in-range- {
+        background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+    }
+    &--cell.-in-range-.-current- {
+        border-radius: 0;
+    }
+    &--cell.-in-range-.-focus- {
+        background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+        border-radius: 0;
+    }
+    &--cell ~ .-focus- {
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        border-radius: 50%;
+        color: @cWhite;
+        font-family: Montserrat-Bold;
+    }
+    &--cell.-selected-.-focus- {
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        border-radius: 50%;
+    }
+    &--cell ~ .-range-from- > .input-date-block__date {
+        background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+        left: 50%;
+    }
+    &--cell ~ .-range-to- > .input-date-block__date {
+        background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+        right: 50%;
+    }
+    &--cell ~ .-range-to- {
+        border: none;
+        background-color: #fff;
+    }
+    &--cell ~ .-selected- {
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        border-radius: 50%;
+        font-family: Montserrat-Bold;
+        color: @cWhite;
+    }
+    &--cell.-selected-.-current- {
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    }
+    &--cell.-focus-.-current- {
+        color: @cWhite;
+    }
+    &--button {
+        font-family: Montserrat-Bold;
+        color: @cDarkShade50;
+        text-transform: uppercase;
+        &:hover {
+            background: none;
+        }
+        &[data-action='clear'] {
+            justify-content: flex-start;
+        }
+        &[data-action='hide'] {
+            justify-content: flex-end;
+            color: @cPurple;
+        }
+    }
+    &--buttons {
+        border: none;
+        margin-top: 20px;
+    }
+    &--nav-action {
+        &[data-action='prev'] {
+            transform: rotate(180deg);
+        }
+        & svg {
+            width: 24px;
+            height: 24px;
+        }
+        & path {
+            fill: @cPurple;
+            stroke: none;
+            stroke-width: 0;
         }
     }
 }

@@ -1,5 +1,5 @@
 mixin masked-input(data)
         .masked-input-block
-                label.masked-input-block__label #{data.label}
-                        input(type='text' class='masked-input-block__input' data-valid-example="03.04.2019" pattern='(0[1-9]|1[0-9]|2[0-9]|3[0-1])\.(0[0-9]|1[0-2])\.(20[1-9][5-9])' placeholder='ДД.ММ.ГГГГ')
+                label( class='masked-input-block__label' for='masked-input-block__input') #{data.label}
+                input(type='text' class='masked-input-block__input' id='masked-input-block__input' data-valid-example="03.04.2019" pattern='(0[1-9]|1[0-9]|2[0-9]|3[0-1])\.(0[0-9]|1[0-2])\.(20[1-9][5-9])' placeholder='ДД.ММ.ГГГГ')
 

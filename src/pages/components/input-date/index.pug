@@ -1,4 +1,4 @@
 mixin input-date(date)
         .input-date-block
-                label(class='input-date-block__label') #{date.label || 'ДД.ММ.ГГГГ'}
-                        input(type='text' data-range=date.range class='input-date-block__input datepicker-here' id='datepicker' )
+                label(class='input-date-block__label' for='input-date-block__input') #{date.label || 'ДД.ММ.ГГГГ'}
+                input(type='text' data-range=date.range class='input-date-block__input custom-datepicker' id='input-date-block__input' )
