@@ -1,4 +1,3 @@
-import '../style/style.less';
 // components
 import '../pages/components/input-date/index';
 

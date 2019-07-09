@@ -2,6 +2,9 @@ extends ../components/layout/layout
 include ../components/logo/index
 include ../components/input/index
 include ../components/checkbox/index
+include ../components/radio/index
+include ../components/like/index
+include ../components/switch/index
 include ../components/input-date/index
 include ../components/masked-input/index
 
@@ -29,6 +32,20 @@ block content
                                 +input-date({
                                     label: 'Text Field',
                                     range: 'true'
+                                })
+                                +radio({
+                                    label: 'asd',
+                                    name: 'puk'
+                                })
+                                +radio({
+                                    label: 'dsa',
+                                    name: 'puk'
+                                })
+                                +switch({
+                                    label: 'asdasd'
+                                })
+                                +like({
+                                    value: 15
                                 })
 
                         .ui-kit-block__components

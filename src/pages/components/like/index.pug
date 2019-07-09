@@ -1,0 +1,6 @@
+mixin like(data)
+        .like-block
+                label.like-block__label #{data.label}
+                        input(type='checkbox' checked=data.checked || false class='like-block__like')
+                        span.like-block__heart
+                        span.like-block__checkmark #{data.value}

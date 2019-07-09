@@ -1,17 +1,16 @@
 @import "../../../style/style.less";
 
-.radio-block {
+.like-block {
     position: relative;
-    padding-left: 30px;
+    padding-left: 50px;
     cursor: pointer;
-    box-sizing: border-box;
     &__label {
         font-family: Montserrat-Regular;
         font-size: @fMiddleSize;
         color: @cDarkShade50;
         line-height: 20px;
     }
-    &__radio {
+    &__like {
         position: absolute;
         opacity: 0;
         left: 0;
@@ -19,33 +18,33 @@
         height: 0;
         width: 0;
         cursor: pointer;
-        &:checked ~ .radio-block__checkmark {
+        &:checked ~ .like-block__checkmark {
             border: 1px solid @cPurple;
             color: @cPurple;
         }
-        &:checked ~ .radio-block__checkmark:after {
-            display: block;
+        &:checked ~ .like-block__checkmark:after {
+            background: @cPurpleGradient;
+            transform: translateX(23px);
         }
     }
+    &__heart {
+        background: url("../../../svg/heart.svg") left no-repeat;
+        position: absolute;
+        width: 15px;
+        height: 20px;
+        left: 8px;
+        top: 0;
+    }
     &__checkmark {
-        width: 20px;
+        width: 40px;
         height: 20px;
         position: absolute;
-        border-radius: 50%;
+        border-radius: 10px;
         top: 0;
         left: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         border: 1px solid @cDarkShade25;
-        &:after{
-            content: "";
-            position: absolute;
-            display: none;
-            width: 12px;
-            height: 12px;
-            background: @cPurpleGradient;
-            border-radius: 50%;
-        }
     }
 }

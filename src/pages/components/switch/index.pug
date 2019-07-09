@@ -1,0 +1,5 @@
+mixin switch(data)
+        .switch-block
+                label.switch-block__label #{data.label}
+                        input(type='checkbox' checked=data.checked || false class='switch-block__switch')
+                        span.switch-block__checkmark

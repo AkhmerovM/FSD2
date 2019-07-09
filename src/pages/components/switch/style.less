@@ -1,8 +1,8 @@
 @import "../../../style/style.less";
 
-.checkbox-block {
+.switch-block {
     position: relative;
-    padding-left: 30px;
+    padding-left: 50px;
     cursor: pointer;
     &__label {
         font-family: Montserrat-Regular;
@@ -10,7 +10,7 @@
         color: @cDarkShade50;
         line-height: 20px;
     }
-    &__checkbox {
+    &__switch {
         position: absolute;
         opacity: 0;
         left: 0;
@@ -18,35 +18,34 @@
         height: 0;
         width: 0;
         cursor: pointer;
-        &:checked ~ .checkbox-block__checkmark {
+        &:checked ~ .switch-block__checkmark {
             border: 1px solid @cPurple;
             color: @cPurple;
         }
-        &:checked ~ .checkbox-block__checkmark:after {
-            display: block;
+        &:checked ~ .switch-block__checkmark:after {
+            background: @cPurpleGradient;
+            transform: translateX(23px);
         }
     }
     &__checkmark {
-        width: 20px;
+        width: 40px;
         height: 20px;
         position: absolute;
-        border-radius: 4px;
+        border-radius: 10px;
         top: 0;
         left: 0;
+        display: flex;
+        align-items: center;
         border: 1px solid @cDarkShade25;
         &:after{
             content: "";
             position: absolute;
-            display: none;
-            left: 5px;
-            top: 2px;
-            width: 6px;
-            height: 8px;
-            border: solid @cPurple;
-            border-width: 0 3px 3px 0;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+            width: 12px;
+            height: 12px;
+            background: @cDarkShade25;
+            border-radius: 50%;
+            transition: transform 0.4s;
+            transform: translateX(3px);
         }
     }
 }
