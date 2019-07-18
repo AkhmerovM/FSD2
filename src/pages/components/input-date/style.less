@@ -70,37 +70,37 @@
         position: relative;
     }
     &--cell ~ .-current- {
-        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+        background: @cGreenGradient;
         border-radius: 50%;
         font-family: Montserrat-Bold;
         color: @cWhite;
     }
     &--cell ~ .-in-range- {
-        background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+        background: @cDarkShade25Gradient;
     }
     &--cell.-in-range-.-current- {
         border-radius: 0;
     }
     &--cell.-in-range-.-focus- {
-        background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+        background: @cDarkShade25Gradient;
         border-radius: 0;
     }
     &--cell ~ .-focus- {
-        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        background: @cPurpleGradient;
         border-radius: 50%;
         color: @cWhite;
         font-family: Montserrat-Bold;
     }
     &--cell.-selected-.-focus- {
-        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        background: @cPurpleGradient;
         border-radius: 50%;
     }
     &--cell ~ .-range-from- > .input-date-block__date {
-        background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+        background: @cDarkShade25Gradient;
         left: 50%;
     }
     &--cell ~ .-range-to- > .input-date-block__date {
-        background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+        background: @cDarkShade25Gradient;
         right: 50%;
     }
     &--cell ~ .-range-to- {
@@ -108,13 +108,13 @@
         background-color: #fff;
     }
     &--cell ~ .-selected- {
-        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        background: @cPurpleGradient;
         border-radius: 50%;
         font-family: Montserrat-Bold;
         color: @cWhite;
     }
     &--cell.-selected-.-current- {
-        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        background: @cPurpleGradient;
     }
     &--cell.-focus-.-current- {
         color: @cWhite;

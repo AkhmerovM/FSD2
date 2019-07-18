@@ -1,0 +1,3 @@
+mixin button(data)
+        div(class=`button-block ${data.disabled ? 'button-block_disabled' : ''}`)
+                input(type='button' class=`button-block__button ${data.type ? 'button-block__button_' + data.type : ''}` value=data.text)

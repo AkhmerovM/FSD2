@@ -1,0 +1,37 @@
+@import "../../../style/style.less";
+
+.pagination-block {
+    font-family: Montserrat-Regular;
+    font-size: @fSmallSize;
+    .page-link {
+        width: 40px;
+        height: 40px;
+        border: none;
+        margin: 0;
+        background: none;
+        box-shadow: none;
+    }
+    .current {
+        background: @cPurpleGradient;
+        color: @cWhite;
+        border: none;
+        font-family: Montserrat-Bold;
+    }
+    .prev,.next,.current,.page-link,.ellipse {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .prev, .next {
+        background: @cGreenGradient;
+    }
+    .prev {
+        transform: rotate(180deg);
+    }
+    .disabled {
+        display: none;
+    }
+}

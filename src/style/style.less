@@ -1,4 +1,6 @@
 @import './fonts/style';
+//modules
+@import './modules/pagination';
 // pages
 @import '../pages/ui-kit/style';
 
@@ -8,6 +10,11 @@
 @import '../pages/components/radio/style';
 @import '../pages/components/switch/style';
 @import '../pages/components/like/style';
+@import '../pages/components/range/style';
+@import '../pages/components/button/style';
+@import '../pages/components/pagination/style';
+@import '../pages/components/link/style';
+@import '../pages/components/rate/style';
 @import '../pages/components/input-date/style';
 @import '../pages/components/masked-input/style';
 
@@ -15,9 +22,13 @@
 * {
     box-sizing: border-box;
 }
+a {
+    text-decoration: none;
+}
 
 @fSmallSize: 12px;
 @fMiddleSize: 14px;
+@fIconSize: 24px;
 @cGreen: #6FCF97;
 @cPurple: #BC9CFF;
 @cWhite: #FFF;
@@ -29,3 +40,5 @@
 @cDarkShade100: rgba(31,32,65);
 
 @cPurpleGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+@cGreenGradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+@cDarkShade25Gradient: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);

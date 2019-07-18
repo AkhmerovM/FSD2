@@ -1,0 +1,4 @@
+mixin link(data)
+        a(href=data.to class=`link-block ${data.disabled ? 'link-block_disabled' : ''}`) #{data.text}
+                span.link-block__arrow
+                        include ../../../svg/arrow-right.svg

@@ -5,6 +5,12 @@ include ../components/checkbox/index
 include ../components/radio/index
 include ../components/like/index
 include ../components/switch/index
+include ../components/range/index
+include ../components/link/index
+include ../components/rate/index
+include ../components/range/index
+include ../components/pagination/index
+include ../components/button/index
 include ../components/input-date/index
 include ../components/masked-input/index
 
@@ -26,13 +32,13 @@ block content
                                     placeholder: 'Email',
                                     icon: true
                                 })
-                                +masked-input({
-                                    label: 'Masked input'
-                                })
-                                +input-date({
-                                    label: 'Text Field',
-                                    range: 'true'
-                                })
+                                //+masked-input({
+                                //    label: 'Masked input'
+                                //})
+                                //+input-date({
+                                //    label: 'Text Field',
+                                //    range: 'true'
+                                //})
                                 +radio({
                                     label: 'asd',
                                     name: 'puk'
@@ -47,7 +53,15 @@ block content
                                 +like({
                                     value: 15
                                 })
-
+                                +rate({
+                                    stars: 4
+                                })
+                                +rate({
+                                    stars: 7
+                                })
+                                +range({
+                                    label: 'Range slider'
+                                })
                         .ui-kit-block__components
                                 +checkbox({
                                     label: 'Можно курить'
@@ -60,4 +74,24 @@ block content
                                     label: 'Можно с пригласить гостей(до 10 человек)',
                                     checked: true
                                 })
-                        .ui-kit-block__components
+                                +button({
+                                    text: 'Click me'
+                                })
+                                +button({
+                                    text: 'Click me',
+                                    disabled: true
+                                })
+                                +button({
+                                    text: 'Click me',
+                                    type: 'empty'
+                                })
+                                +button({
+                                    text: 'Click me',
+                                    type: 'empty',
+                                    disabled: true
+                                })
+                                +link({
+                                    text: 'Перейти к оплате',
+                                    to: '#'
+                                })
+                                +pagination()

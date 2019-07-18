@@ -1,5 +1,9 @@
 mixin input(data)
         .input-block
-                label(class='input-block__label' for='input-block__input') #{data.label}
-                input(type='text' id='input-block__input' class=`input-block__input ${data.icon ? 'input-block__input_icon' : ''}` placeholder=data.placeholder value=data.value || '')
+                label(class='input-block__label') #{data.label}
+                        div(class='input-block__wrapper')
+                                input(type='text' class='input-block__input' placeholder=data.placeholder value=data.value || '')
+                                if data.icon
+                                        span(class='input-block__icon')
+                                                include ../../../svg/arrow-right.svg
 

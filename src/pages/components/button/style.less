@@ -1,0 +1,32 @@
+@import "../../../style/style.less";
+
+.button-block {
+    display: inline-block;
+    background: @cPurpleGradient;
+    border-radius: 22px;
+    padding: 2px;
+    &__button {
+        border: none;
+        background: @cPurpleGradient;
+        cursor: pointer;
+        outline: none;
+        font-family: Montserrat-Bold;
+        font-size: @fSmallSize;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: @cWhite;
+        padding: 14px;
+        border-radius: 22px;
+        &_empty {
+            background: @cWhite;
+            color: @cPurple;
+        }
+    }
+    &_disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+}

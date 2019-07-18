@@ -1,0 +1,28 @@
+@import "../../../style/style.less";
+
+.link-block {
+    background: @cPurpleGradient;
+    border-radius: 22px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    font-family: Montserrat-Bold;
+    font-size: @fSmallSize;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: @cWhite;
+    padding:14px 0;
+    width: 100%;
+    &_disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    &__arrow {
+        fill: @cWhite;
+        position: absolute;
+        right: 0;
+    }
+}

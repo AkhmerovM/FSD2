@@ -1,0 +1,7 @@
+mixin range(data)
+        div.range-block
+            label.range-block__label
+                div.range-block__label-wrapper
+                    span(class='range-block__name') #{data.label}
+                    span(class="range-block__value" readonly)
+                div(class='range-block__range')

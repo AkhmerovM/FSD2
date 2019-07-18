@@ -2,7 +2,6 @@
 
 .like-block {
     position: relative;
-    padding-left: 50px;
     cursor: pointer;
     &__label {
         font-family: Montserrat-Regular;
@@ -21,30 +20,30 @@
         &:checked ~ .like-block__checkmark {
             border: 1px solid @cPurple;
             color: @cPurple;
-        }
-        &:checked ~ .like-block__checkmark:after {
-            background: @cPurpleGradient;
-            transform: translateX(23px);
+            }
+        &:checked ~ .like-block__heart .like-block__heart-svg  {
+            fill: @cPurple;
         }
     }
     &__heart {
-        background: url("../../../svg/heart.svg") left no-repeat;
         position: absolute;
         width: 15px;
         height: 20px;
         left: 8px;
-        top: 0;
+        display: flex;
+        align-items: center;
     }
     &__checkmark {
         width: 40px;
         height: 20px;
-        position: absolute;
         border-radius: 10px;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: inline-block;
         border: 1px solid @cDarkShade25;
+        cursor: pointer;
+    }
+    &__value {
+        position: absolute;
+        top: 0;
+        left: 20px;
     }
 }
