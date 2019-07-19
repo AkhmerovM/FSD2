@@ -9,6 +9,7 @@ include ../components/range/index
 include ../components/link/index
 include ../components/rate/index
 include ../components/range/index
+include ../components/dropdown/index
 include ../components/pagination/index
 include ../components/button/index
 include ../components/input-date/index
@@ -93,5 +94,8 @@ block content
                                 +link({
                                     text: 'Перейти к оплате',
                                     to: '#'
+                                })
+                                +dropdown({
+                                    elements: ['Спальни', 'Кровати', 'Ванные комнаты']
                                 })
                                 +pagination()

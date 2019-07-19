@@ -6,6 +6,7 @@ import './other/pagination';
 import '../pages/components/input-date/index';
 import '../pages/components/like/index';
 import '../pages/components/range/index';
+import '../pages/components/dropdown/index';
 import '../pages/components/pagination/index';
 import '../pages/components/rate/index';
 

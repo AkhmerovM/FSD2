@@ -17,7 +17,6 @@ $(document).ready (function() {
                 $(SELECTORS.value).html(numberWithSpaces(ui.values[0]) + "<i class='fa fa-ruble'></i> - " + numberWithSpaces(ui.values[1]) + "<i class='fa fa-ruble'></i>")
             }
         });
-        console.log($(SELECTORS.value));
         $(SELECTORS.value).html(numberWithSpaces($range.slider("values", 0 )) + "<i class='fa fa-ruble'></i> - " + numberWithSpaces($range.slider("values", 1)) + '<i class=\'fa fa-ruble\'></i>');
     }
 });
